@@ -1,0 +1,276 @@
+@charset "utf-8";
+/* My custom CSS for the Bootstrap Site, overriding existing styles */
+
+:root {
+  --mainFont: 'Italiana';
+  --secondMainFont: 'Montserrat';
+}
+
+body {
+    background-color: #000;
+}
+
+/* Top Navigation Bar */
+.navbar {
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1040;
+    padding-top: 0;
+    transition: top 0.3s;
+}
+
+.black-background {
+    background-color: black;
+}
+
+.navbar-initial {
+    font-size: 1.8rem;
+    font-family: var(--mainFont);
+    text-decoration: none;
+    color: #fff;
+    z-index: 1060;
+}
+
+.navbar .navbar-toggler {
+    border: none; 
+    outline: none;
+    box-shadow: none;
+    z-index: 1060;
+}
+
+.navbar .navbar-toggler .fa-bars {
+    color: #fff;
+}
+
+.navbar-nav .nav-item {
+    margin-right: 0;
+}
+
+.navbar-nav .nav-item:not(:last-child) {
+    margin-right: 30px;
+}
+
+.navbar-nav .nav-link {
+    font-family: var(--secondMainFont);
+    color: #fff;
+}
+
+.navbar-initial, .navbar-nav .nav-link {
+    transition: color 0.3s ease;
+}
+
+.navbar-initial:hover, .navbar-nav .nav-link:hover {
+    color: #909090;
+}
+
+.veggie-menu span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px auto;
+    transition: background-color 0.1s ease, transform 0.3s ease;
+}
+
+.veggie-menu.open .burger-top {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.veggie-menu.open .burger-middle {
+    opacity: 0;
+}
+
+.veggie-menu.open .burger-bottom {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+@media (max-width: 992px) {
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: none;
+        background-color: #000;
+        z-index: 1030;
+        overflow: hidden;
+        transition: transform 0.5s ease-in-out;
+        transform: translateY(-100%);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 130px 0;
+    }
+
+    .navbar-nav {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        width: 100%;
+    }
+
+    .navbar-nav .nav-link {
+        font-family: var(--secondMainFont);
+        color: #fff;
+        font-size: 40px;
+        padding: 25px 15px;
+    }
+
+    .navbar-collapse.collapsing {
+        height: auto;
+        transition: transform 0.5s ease;
+    }
+
+    .navbar-collapse.show {
+        transform: translateY(0);
+    }
+}
+
+.stop-scrolling {
+    overflow: hidden;
+}
+
+/* Resume Container */
+.resume-container {
+    margin-top: 250px;
+}
+
+.resume-content {
+    margin: 100px 79px;
+}
+
+.header-section .title-line {
+    border: none;
+    height: 2px;
+    width: 75px;
+    background-color: #fff;
+}
+
+.header-section .title {
+    font-family: 'Italiana';
+    font-size: 4rem;
+    letter-spacing: 7px;
+    color: #fff;
+}
+
+/* Profile */
+.profile-section .profile-title,
+.contact-section .contact-title,
+.skills-section .skills-title,
+.educations-section .educations-title,
+.experiences-section .experiences-title {
+    font-family: var(--mainFont);
+    font-size: 2.5rem;
+    letter-spacing: 7px;
+    color: #fff;
+}
+
+.educations-section h2,
+.experiences-section h1 {
+    font-family: var(--SecondMainFont);
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.profile-section h2,
+.contact-section h2, 
+.skills-section h2,
+.educations-section h3,
+.educations-section li,
+.experiences-section h2,
+.experiences-section li {
+    font-family: var(--secondMainFont);
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    color: #909090;
+}
+
+.contact-section h2, 
+.skills-section h2 {
+    margin-bottom: 20px;
+}
+
+
+/* Contacts */
+.icon-circle {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+}
+.icon-circle i {
+    color: #000;
+}
+
+.contact-section a {
+    color: #909090; /* Same color as other text */
+    text-decoration: none; /* Removes underline */
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.contact-section a:hover {
+    color: #fff; /* Color changes to white on hover */
+}
+
+.contact-section a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: #fff; /* Line color */
+    transition: width 0.5s ease;
+    opacity: 0;
+}
+
+.contact-section a:hover::after {
+    width: 100%;
+    opacity: 1;
+}
+
+/* Skills */
+.skills-section,
+.educations-section,
+.experiences-section {
+    margin-top: 100px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    opacity: 0;
+    animation-name: fadeInUp;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+}
+
+/* Responsive CSS adjustments */
+@media (max-width: 560px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .header-section .title {
+        font-size: 3rem;
+    }
+}

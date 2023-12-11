@@ -1,0 +1,728 @@
+@charset "utf-8";
+/* My custom CSS for the Bootstrap Site, overriding existing styles */
+
+:root {
+  --mainFont: 'Italiana';
+  --secondMainFont: 'Montserrat';
+}
+
+body {
+    background-color: #000;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    margin-bottom: 547px;
+}
+
+/* Top Navigation Bar */
+.navbar {
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1040;
+    padding-top: 0;
+    transition: top 0.3s;
+}
+
+.black-background {
+    background-color: black;
+}
+
+.navbar-initial {
+    font-size: 1.8rem;
+    font-family: var(--mainFont);
+    text-decoration: none;
+    color: #fff;
+    z-index: 1060;
+}
+
+.navbar .navbar-toggler {
+    border: none; 
+    outline: none;
+    box-shadow: none;
+    z-index: 1060;
+}
+
+.navbar .navbar-toggler .fa-bars {
+    color: #fff;
+}
+
+.navbar-nav .nav-item {
+    margin-right: 0;
+}
+
+.navbar-nav .nav-item:not(:last-child) {
+    margin-right: 30px;
+}
+
+.navbar-nav .nav-link {
+    font-family: var(--secondMainFont);
+    color: #fff;
+}
+
+.navbar-initial, .navbar-nav .nav-link {
+    transition: color 0.3s ease;
+}
+
+.navbar-initial:hover, .navbar-nav .nav-link:hover {
+    color: #909090;
+}
+
+.veggie-menu span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px auto;
+    transition: background-color 0.1s ease, transform 0.3s ease;
+}
+
+.veggie-menu.open .burger-top {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.veggie-menu.open .burger-middle {
+    opacity: 0;
+}
+
+.veggie-menu.open .burger-bottom {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+@media (max-width: 992px) {
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: none;
+        background-color: #000;
+        z-index: 1030;
+        overflow: hidden;
+        transition: transform 0.5s ease-in-out;
+        transform: translateY(-100%);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 130px 0;
+    }
+
+    .navbar-nav {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        width: 100%;
+    }
+
+    .navbar-nav .nav-link {
+        font-family: var(--secondMainFont);
+        color: #fff;
+        font-size: 40px;
+        padding: 25px 15px;
+    }
+
+    .navbar-collapse.collapsing {
+        height: auto;
+        transition: transform 0.5s ease;
+    }
+
+    .navbar-collapse.show {
+        transform: translateY(0);
+    }
+}
+
+.stop-scrolling {
+    overflow: hidden;
+}
+
+.main-content {
+    background-color: #000;
+    padding-bottom: 200px;
+}
+
+/* Hero Section */
+.main-hero-section {
+    width: 100%;
+    height: 100vh;
+    margin-right: 0px;
+}
+
+.hero-section {
+    width: 100%;
+    height: 90vh;
+    margin-right: 0px;
+}
+
+.main-hero-section .main-title,
+.hero-section .main-title {
+    font-family: var(--mainFont);
+    font-size: 10rem;
+    color: #FFF;
+    margin: 3rem;
+}
+
+.main-hero-section .main-heading,
+.hero-section .main-heading {
+    font-family: var(--mainFont);
+    font-size: 10rem;
+    color: #1E1E1E;
+    margin: 3rem;
+}
+
+.main-hero-section .outline-word,
+.hero-section .outline-word {
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+}
+
+.main-heading {
+    transition: color 1.2s ease;
+}
+
+/* Scroll Down */
+.horizontal-line {
+    width: 50px;
+    border-top: 1px solid white;
+}
+
+.main-hero-section .scroll-down-container {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: -20px;
+    left: 30px;
+    transform: translateX(calc(10% + 5px)) rotate(-90deg);
+    transform-origin: top left;
+    white-space: nowrap;
+    margin-top: 100px;
+}
+
+.main-hero-section .scroll-down-container h1 {
+    font-family: var(--secondMainFont);
+    font-size: 1rem;
+    color: #fff;
+    margin: 0;
+}
+
+.main-hero-section .scroll-down-container {
+    transition: opacity 0.5s ease-in-out;
+}
+
+@media (max-width: 992px) {
+    .main-hero-section .main-heading,
+    .hero-section .main-heading {
+        font-size: 5rem;
+    }
+    
+    .main-hero-section .main-title,
+    .hero-section .main-title {
+        font-size: 5rem;
+    }
+
+    .hero-section .scroll-down-container {
+        left: 30px;
+        transform: translateX(calc(10% + 5px)) rotate(-90deg);
+    }
+}
+
+.heading-container {
+    overflow: hidden;
+}
+
+.main-hero-section .main-title,
+.hero-section .main-title {
+    animation: fadeInOpacity 1.5s ease forwards;
+}
+
+.main-hero-section .main-heading,
+.hero-section .main-heading {
+    animation: fadeInOpacity 1.5s ease forwards;
+}
+
+/* Define keyframes for opacity fade-in */
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Welcome Message */
+.brief-welcome {
+    margin-top: 100px;
+    opacity: 0;
+}
+
+.brief-welcome h1 {
+    font-family: var(--mainFont);
+    font-size: 4rem;
+    letter-spacing: 7px;
+    color: #fff;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fadeInUp {
+    animation-name: fadeInUp;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+/* Tone and Style */
+.explaination {
+    padding-left: 120px;
+    padding-right: 120px;
+}
+
+.explaination h1 {
+    font-family: var(--secondMainFont);
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: #909090;
+}
+
+.explaination h1 span {
+    color: #fff;
+    font-weight: 700;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.white-circle {
+    width: 410px;
+    height: 410px;
+    background-color: white;
+    border-radius: 50%;
+    margin: auto;
+}
+
+/* Contact Container */
+.header-section .title {
+    font-family: 'Italiana';
+    font-size: 4rem;
+    letter-spacing: 7px;
+    color: #fff;
+}
+
+/* Color Palette Section */
+.color-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+/* White Block */
+#color-block-black {
+    font-family: var(--mainFont);
+    font-size: 8rem;
+    line-height: 1.8rem;
+    color: #FFF;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.5s;
+}
+
+#color-block-black::before {
+    content: "I chose black for its sophistication and professionalism, perfect for a modern, minimalist website. It adds a powerful and authoritative touch.";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFF;
+    font-size: 2.8rem;
+    line-height: 3.2rem;
+    text-align: center;
+    width: 90%;
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
+#color-block-black:hover::before {
+    opacity: 1;
+}
+
+#color-block-black:hover {
+    color: transparent;
+}
+
+#color-block-black {
+    font-family: var(--mainFont);
+    font-size: 8rem;
+    line-height: 1.8rem;
+    color: #FFF;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.5s;
+}
+
+/* White Block */
+#color-block-white {
+    font-family: var(--mainFont);
+    font-size: 8rem;
+    line-height: 1.8rem;
+    color: #000;
+    background-color: #FFF;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.5s;
+}
+
+#color-block-white::before {
+    content: "I selected white for its purity and simplicity, creating a clean, uncluttered backdrop that complements the minimalist design.";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000;
+    font-size: 2.8rem;
+    line-height: 3.2rem;
+    text-align: center;
+    width: 90%;
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
+#color-block-white:hover::before {
+    opacity: 1;
+}
+
+#color-block-white:hover {
+    color: transparent;
+}
+
+/* Red Block */
+#color-block-red {
+    font-family: var(--mainFont);
+    font-size: 2rem;
+    line-height: 1.8rem;
+    color: #FFF;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.5s;
+}
+
+#color-block-red::before {
+    content: "I selected white for its purity and simplicity, creating a clean, uncluttered backdrop that complements the minimalist design.";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFF;
+    font-size: 1.3rem;
+    text-align: center;
+    width: 90%;
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
+#color-block-red:hover::before {
+    opacity: 1;
+}
+
+#color-block-red:hover {
+    color: transparent;
+}
+
+/* Navy Block */
+#color-block-navy {
+    font-family: var(--mainFont);
+    font-size: 2rem;
+    line-height: 1.8rem;
+    color: #FFF;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.5s;
+}
+
+#color-block-navy::before {
+    content: "I selected white for its purity and simplicity, creating a clean, uncluttered backdrop that complements the minimalist design.";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFF;
+    font-size: 1.3rem;
+    text-align: center;
+    width: 90%;
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
+#color-block-navy:hover::before {
+    opacity: 1;
+}
+
+#color-block-navy:hover {
+    color: transparent;
+}
+
+/* Grey Block */
+#color-block-grey {
+    font-family: var(--mainFont);
+    font-size: 4rem;
+    line-height: 1.8rem;
+    color: #000;
+    background-color: #FFF;
+    position: relative;
+    overflow: hidden; 
+    transition: color 0.5s;
+}
+
+#color-block-grey::before {
+    content: "I selected white for its purity and simplicity, creating a clean, uncluttered backdrop that complements the minimalist design.";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    text-align: center;
+    width: 90%;
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
+#color-block-grey:hover::before {
+    opacity: 1;
+}
+
+#color-block-grey:hover {
+    color: transparent;
+}
+
+#color-block-white { background-color: #FFF; color: #000; }
+#color-block-black { background-color: #000; }
+#color-block-navy { background-color: #072142; }
+#color-block-red { background-color: #FF4D5A; }
+#color-block-grey { background-color: #9C9C9C; }
+
+.color-block {
+  padding: 0;
+  border: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .color-block {
+    font-size: 1em;
+    height: 25vh;
+  }
+}
+.text-italiana {
+    font-size: 100px;
+    font-family: 'Italiana', serif;
+}
+
+/* fonts */
+.font-list-container .col-md-4 {
+    padding: 15px; /* Adjust padding to increase gap */
+}
+
+.font-list-container .font-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Make each container take full height */
+}
+
+.font-list-container h1 {
+    margin: 0;
+    text-align: center;
+}
+
+/* Specific font styles */
+.font-list-container .italian-font h1 {
+    font-family: 'Italiana', serif;
+    font-size: 6rem;
+    color: #fff;
+}
+
+.font-list-container .montserrat-font h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem;
+    color: #fff;
+}
+
+.font-list-container .roboto-font h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 3rem;
+    color: #fff;
+}
+
+/* Development */
+.table {
+    background-color: transparent;
+    border-collapse: collapse;
+}
+
+.table td {
+    background-color: transparent;
+}
+
+.table h1{
+    font-family: var(--secondMainFont);
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.custom-row-spacing td {
+  padding-bottom: 50px;
+}
+
+/* footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background-color: #fff;
+    padding: 50px 0;
+}
+
+footer .work-togehter-text .fw-bolder{
+    font-family: 'Italiana';
+    font-size: 6.6rem;
+    color: #000;
+}
+
+footer .work-togehter-text span{
+    font-family: 'Italiana';
+    font-size: 6.6rem;
+    color: #909090;
+}
+
+.footer-content {
+    text-align: left;
+}
+
+.lines {
+    margin-top: 20px;
+}
+
+.line-long, .line-short {
+    height: 3px;
+    background-color: #000;
+}
+
+.line-long {
+    width: 10%;
+    margin: 20px 0;
+}
+
+.line-short {
+    width: 10%;
+    margin: 20px 100px;
+}
+
+.social-icons {
+    font-size: 2.5rem;
+}
+
+.icon-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.email-section {
+    transition: transform 0.3s ease;
+}
+
+.email-link {
+    font-family: 'Montserrat';
+    font-size: 2rem;
+    color: #000;
+    text-decoration: none;
+}
+
+.icon-link {
+    transition: transform 0.3s ease;
+}
+
+.email-section:hover, .icon-link:hover {
+    transform: translateY(-5px);
+}
+
+@media (max-width: 992px) {
+    footer .work-togehter-text .fw-bolder{
+    font-family: 'Italiana';
+    font-size: 4.9rem;
+    color: #000;
+    }
+
+    footer .work-togehter-text span{
+        font-family: 'Italiana';
+        font-size: 4.9rem;
+        color: #000;
+    }
+    
+    .email-section {
+        font-family: 'Montserrat';
+        font-size: 1.8rem;
+        color: #000;
+    }
+    
+    .social-icons {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    footer .work-togehter-text .fw-bolder{
+    font-family: 'Italiana';
+    font-size: 3.7rem;
+    color: #000;
+    }
+
+    footer .work-togehter-text span{
+        font-family: 'Italiana';
+        font-size: 3.7rem;
+        color: #000;
+    }
+    
+    .email-section {
+        font-family: 'Montserrat';
+        font-size: 1.5rem;
+        color: #000;
+    }
+    
+    .social-icons {
+        font-size: 2rem;
+    }
+}
