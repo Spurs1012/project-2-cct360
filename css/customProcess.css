@@ -431,7 +431,7 @@ body {
 }
 
 #color-block-red::before {
-    content: "I selected white for its purity and simplicity, creating a clean, uncluttered backdrop that complements the minimalist design.";
+    content: "This bold color adds energy and draws attention to key elements, injecting passion and creativity into the design.";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -466,7 +466,7 @@ body {
 }
 
 #color-block-navy::before {
-    content: "I selected white for its purity and simplicity, creating a clean, uncluttered backdrop that complements the minimalist design.";
+    content: "This color brings reliability and professionalism, offering a subdued contrast and depth without being overwhelming";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -501,7 +501,7 @@ body {
 }
 
 #color-block-grey::before {
-    content: "I selected white for its purity and simplicity, creating a clean, uncluttered backdrop that complements the minimalist design.";
+    content: "A balanced and versatile color, grey softens the contrast between black and white, adding sophistication and a modern touch.";
     position: absolute;
     top: 50%;
     left: 50%;
