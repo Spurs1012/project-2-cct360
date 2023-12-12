@@ -139,17 +139,13 @@ body {
 .main-content {
     background-color: #000;
     padding-bottom: 200px;
-    margin-top: 250px;
+    padding-top: 250px;
 }
 
 .vertical-divider {
     border-left: 1px solid #fff;
     height: 100px;
     margin: 50px auto;
-}
-
-.brief_Description {
-    margin-top: 250px;
 }
 
 .brief_Description .hello {
